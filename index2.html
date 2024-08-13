@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Glitchy Page</title>
+	<style>
+		body {
+			background-color: #000;
+			margin: 0;
+			padding: 0;
+		}
+
+		.glitch-container {
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.glitch-text {
+			font-size: 64px;
+			font-family: Arial, sans-serif;
+			color: #fff;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+		}
+
+		.glitch-text::before {
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: #fff;
+			text-shadow: 2px 2px #ff69b4;
+			animation: glitch 2s infinite;
+		}
+
+		.glitch-text::after {
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: #fff;
+			text-shadow: -2px -2px #33ccff;
+			animation: glitch 2s infinite;
+			animation-delay: 1s;
+		}
+
+		@keyframes glitch {
+			0% {
+				transform: translate(0, 0);
+			}
+			20% {
+				transform: translate(-2px, 2px);
+			}
+			40% {
+				transform: translate(2px, -2px);
+			}
+			60% {
+				transform: translate(-2px, 2px);
+			}
+			80% {
+				transform: translate(2px, -2px);
+			}
+			100% {
+				transform: translate(0, 0);
+			}
+		}
+
+		.footer {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 12px;
+			font-family: Arial, sans-serif;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="glitch-container">
+		<p class="glitch-text" data-text="Created by omr16">Created by omr16</p>
+	</div>
+	<div class="footer">#El-welely</div>
+</body>
+</html>
